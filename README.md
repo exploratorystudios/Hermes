@@ -24,7 +24,6 @@ The "messages" Hermes delivers – the trained intelligence of the neural networ
     * 16 neurons in the hidden layer (where interpretation happens).
     * 4 output neurons (delivering the final category).
 * **Activation Function (The Spark of Thought):** Sigmoid activation function ($f(x) = \frac{1}{(1 + e^{-x})}$), with output clamping for stable thought processes on the calculator.
-* **Adaptive Learning (Data Augmentation):** Basic noise-based data augmentation is applied during on-calculator training, helping Hermes generalize.
 * **Display:** Clear, text-based communication of menus, progress, and results.
 
 *(Note: The program name on the calculator might be truncated (e.g., to `HERMES` or `NNCLAS10`). The internal display name "NEURALNET CLASSIFIER V10.0" will still be shown by Hermes itself.)*
