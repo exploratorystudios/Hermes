@@ -17,8 +17,7 @@ The "messages" Hermes delivers – the trained intelligence of the neural networ
 ### Hermes on the TI-84 (`NEURALNET_CLASSIFIER_V10.0.8xp`)
 
 * **Swift On-Calculator Word Classification:** Input a 4-letter word, and Hermes delivers its predicted category and a confidence score, right on your calculator.
-* **On-Calculator Training (Quick Initiation):** A basic training routine allows Hermes to quickly learn directly on the calculator (100 epochs, learning rate 0.04). This is for rapid familiarization, but messages from the PC are more refined.
-* **Receive "Messages" (Load Pre-trained Models):** Hermes can load sophisticated training messages (weights and biases) prepared on a PC. A default message is included for immediate use.
+* **Load Pre-trained Models:** Hermes can load sophisticated training messages (weights and biases) prepared on a PC. A default message is included for immediate use.
 * **Intuitive Guidance (Menu System):** User-friendly menus guide you through training Hermes, using its classification abilities, or loading new knowledge.
 * **Hermes's Mind (Neural Network Architecture):** A 4-16-4 feedforward neural network:
     * 4 input neurons (to receive the 4 characters of a word).
