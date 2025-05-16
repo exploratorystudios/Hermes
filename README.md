@@ -121,7 +121,7 @@ The Python script overcomes these limitations, enabling the creation of highly e
 This section outlines the recommended method for training the neural network model on your PC using the Python script and then deploying this trained model to your TI-84 calculator program. This process leverages PC-based tools like TokenIDE (for editing) and TI Connect CE (for transfer), which is compatible with all relevant TI-84 calculator versions.
 
 1.  **Train Model on PC:**
-    * Execute `python_trainer.py` with your desired parameters. For optimal robustness to typos and complex input variations, use a high number of epochs (e.g., 50,000 or more).
+    * Execute `trainer.py` with your desired parameters. For optimal robustness to typos and complex input variations, use a high number of epochs (e.g., 50,000 or more).
     * Example:
         ```bash
         python python_trainer.py --epochs 75000 --lr 0.005 --output nn_model_data.txt --test
