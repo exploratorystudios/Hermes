@@ -1,4 +1,4 @@
-"NEURALNET CLASSIFIER V10.0"→Str9
+"HERMES V10.0"→Str9
 ClrHome
 Output(1,1,Str9)
 Lbl Z
@@ -331,7 +331,7 @@ Goto H
 
 Lbl F
 ClrHome
-Output(1,1,"=== NEURAL CLASSIFIER ===")
+Output(1,1,"=== HERMES ===")
 Output(3,1,"Version 10.0")
 Output(4,1,"- Feedforward neural net")
 Output(5,1,"- 4-16-4 arχtecture")
