@@ -148,6 +148,4 @@ The Python script overcomes these limitations, enabling the creation of highly e
     * **Word Scrambling:** Training examples are created by shuffling the letters of the target words.
     * These methods are crucial for the network's ability to generalize and handle noisy or misspelled input effectively.
 
-## License
 
-This project is licensed under the MIT License.
