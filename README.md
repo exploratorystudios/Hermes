@@ -62,7 +62,7 @@ The Python script overcomes these limitations, enabling the creation of highly e
 
 * **Calculator:** TI-84 Plus CE, TI-84 Plus C Silver Edition, or a compatible model from the TI-84 Plus series.
 * **Transfer Software:** TI Connect™ CE software or a compatible alternative (e.g., TiLP) for transferring the `.8xp` program file.
-* **Calculator Memory:** Sufficient free RAM and Archive memory.
+* **Calculator Memory:** Sufficient free RAM.
 
 ### Python Training Script:
 
