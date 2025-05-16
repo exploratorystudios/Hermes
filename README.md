@@ -73,7 +73,7 @@ The Python script overcomes these limitations, enabling the creation of highly e
 
 ### TI-84 Program:
 
-1.  **Download:** Obtain the TI-BASIC program file (e.g., `HERMESV10.8xp` or `NNCLASSIFIER_V10.8xp`).
+1.  **Download:** Obtain the TI-BASIC program file.
 2.  **Transfer:** Use TI Connect™ CE or similar software to send the `.8xp` file to the calculator.
 
 ### Python Training Script:
