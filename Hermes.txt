@@ -1,0 +1,510 @@
+"NEURALNET CLASSIFIER V10.0"→Str9
+ClrHome
+Output(1,1,Str9)
+Lbl Z
+ClrHome
+Output(1,1,"=== MAIN MENU ===")
+Menu("SELECT OPTION","TRAIN NEW MODEL",T,"SKIP",A,"EXIT",G)
+Lbl T
+ClrHome
+Output(1,1,Str9)
+Output(3,1,"Initializing…")
+"DARK,NEWT,DEER,DIRT"→Str0
+FnOff 
+0.04→A
+100→V
+0→P
+20→W
+If W>14
+Then
+14→B
+Else
+W→B
+End
+Output(3,1,"Initializing:")
+{16,4}→dim([I])
+For(K,1,16)
+For(M,1,4)
+(rand-0.5)/2→[I](K,M)
+End
+Output(3,14,K*3.125)
+Output(3,16,"%")
+End
+{4,16}→dim([J])
+For(K,1,4)
+For(M,1,16)
+(rand-0.5)/4→[J](K,M)
+End
+Output(3,14,50+K*12.5)
+Output(3,16,"%")
+End
+{8,4}→dim([A])
+For(K,1,8)
+For(M,1,4)
+0→[A](K,M)
+End
+End
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}→L₄
+{0,0,0,0}→L₅
+ClrHome
+Output(1,1,"=== TRAINING ===")
+Output(2,1,"Epochs: 0/")
+Output(2,9,V)
+Output(3,1,"[")
+For(X,1,B)
+Output(3,1+X," ")
+End
+Output(3,14,"]")
+For(E,1,V)
+int(E/V*B)→P
+Output(2,1,"Epochs:")
+Output(2,7,E)
+Output(2,9,"/")
+Output(2,10,V)
+Output(3,1,"[")
+For(X,1,P)
+Output(3,1+X,"#")
+End
+For(X,P+1,B)
+Output(3,1+X," ")
+End
+Output(3,2+B,"]")
+For(T,1,4)
+For(R,1,5)
+If T=1:Then:"DARK"→Str2:End
+If T=2:Then:"NEWT"→Str2:End
+If T=3:Then:"DEER"→Str2:End
+If T=4:Then:"DIRT"→Str2:End
+{0,0,0,0}→L₁
+0→S
+If length(Str2)>0
+Then
+For(S,1,length(Str2))
+sub(Str2,S,1)→Str3
+If Str3="A":Then:1/26→X:End
+If Str3="B":Then:2/26→X:End
+If Str3="C":Then:3/26→X:End
+If Str3="D":Then:4/26→X:End
+If Str3="E":Then:5/26→X:End
+If Str3="F":Then:6/26→X:End
+If Str3="G":Then:7/26→X:End
+If Str3="H":Then:8/26→X:End
+If Str3="I":Then:9/26→X:End
+If Str3="J":Then:10/26→X:End
+If Str3="K":Then:11/26→X:End
+If Str3="L":Then:12/26→X:End
+If Str3="M":Then:13/26→X:End
+If Str3="N":Then:14/26→X:End
+If Str3="O":Then:15/26→X:End
+If Str3="P":Then:16/26→X:End
+If Str3="Q":Then:17/26→X:End
+If Str3="R":Then:18/26→X:End
+If Str3="S":Then:19/26→X:End
+If Str3="T":Then:20/26→X:End
+If Str3="U":Then:21/26→X:End
+If Str3="V":Then:22/26→X:End
+If Str3="W":Then:23/26→X:End
+If Str3="X":Then:24/26→X:End
+If Str3="Y":Then:25/26→X:End
+If Str3="Z":Then:26/26→X:End
+X→L₁(S)
+End
+End
+For(K,S+1,4)
+0→L₁(K)
+End
+If R<5
+Then
+(R-1)/2→N
+For(K,1,4)
+If K≠R and rand<N
+Then
+rand/5→L₁(K)
+End
+End
+End
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}→L₂
+For(Q,1,16)
+0→Z
+For(N,1,4)
+Z+[I](Q,N)*L₁(N)→Z
+End
+Z→L₂(Q)
+End
+For(Q,1,16)
+L₂(Q)+L₄(Q)→L₂(Q)
+End
+For(S,1,16)
+If L₂(S)>10:Then:0.9999→L₂(S):End
+If L₂(S)<-10:Then:0.0001→L₂(S):End
+If abs(L₂(S))≤10:Then:1/(1+e^(⁻L₂(S)))→L₂(S):End
+End
+{0,0,0,0}→L₃
+For(Q,1,4)
+0→Z
+For(N,1,16)
+Z+[J](Q,N)*L₂(N)→Z
+End
+Z→L₃(Q)
+End
+For(Q,1,4)
+L₃(Q)+L₅(Q)→L₃(Q)
+End
+For(S,1,4)
+If L₃(S)>10:Then:0.9999→L₃(S):End
+If L₃(S)<-10:Then:0.0001→L₃(S):End
+If abs(L₃(S))≤10:Then:1/(1+e^(⁻L₃(S)))→L₃(S):End
+End
+{0,0,0,0}→L₆
+For(S,1,4)
+If S=T
+Then
+1→L₆(S)
+Else
+0→L₆(S)
+End
+End
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}→ʟL8
+For(H,1,16)
+0→Z
+For(N,1,4)
+Z+[J](N,H)*(L₃(N)-L₆(N))→Z
+End
+Z*L₂(H)*(1-L₂(H))→ʟL8(H)
+End
+For(S,1,4)
+L₅(S)-A*(L₃(S)-L₆(S))→L₅(S)
+End
+For(N,1,4)
+For(Q,1,16)
+[J](N,Q)-A*(L₃(N)-L₆(N))*L₂(Q)→[J](N,Q)
+End
+End
+For(H,1,16)
+L₄(H)-A*ʟL8(H)→L₄(H)
+End
+For(H,1,16)
+For(Q,1,4)
+[I](H,Q)-A*ʟL8(H)*L₁(Q)→[I](H,Q)
+End
+End
+End
+End
+End
+ClrHome
+Output(1,1,"=== TRAINING COMPLETE ===")
+Output(3,1,"Press ENTER to continue")
+Pause 
+Goto A
+Lbl A
+ClrHome
+Menu("NEURAL CLASSIFIER","CLASSIFY",B,"LOADPRETRAIN",P,"ABOUT",F,"EXIT",G)
+Lbl B
+ClrHome
+Disp (1,1,"WORD CLASSIFIER")
+Disp (8,1,"Press ENTER to exit.")
+Lbl H
+Disp (3,1,"WORD? max 4 chars")
+Disp (4,1,"> ")
+Input Str1
+{0,0,0,0}→L₁
+If length(Str1)=0
+Then
+Goto A
+End
+If length(Str1)>4
+Then
+sub(Str1,1,4)→Str1
+End
+Output(5,1,"Processing…")
+0→S
+If length(Str1)>0
+Then
+For(S,1,length(Str1))
+sub(Str1,S,1)→Str3
+If Str3="A":Then:1/26→X:End
+If Str3="B":Then:2/26→X:End
+If Str3="C":Then:3/26→X:End
+If Str3="D":Then:4/26→X:End
+If Str3="E":Then:5/26→X:End
+If Str3="F":Then:6/26→X:End
+If Str3="G":Then:7/26→X:End
+If Str3="H":Then:8/26→X:End
+If Str3="I":Then:9/26→X:End
+If Str3="J":Then:10/26→X:End
+If Str3="K":Then:11/26→X:End
+If Str3="L":Then:12/26→X:End
+If Str3="M":Then:13/26→X:End
+If Str3="N":Then:14/26→X:End
+If Str3="O":Then:15/26→X:End
+If Str3="P":Then:16/26→X:End
+If Str3="Q":Then:17/26→X:End
+If Str3="R":Then:18/26→X:End
+If Str3="S":Then:19/26→X:End
+If Str3="T":Then:20/26→X:End
+If Str3="U":Then:21/26→X:End
+If Str3="V":Then:22/26→X:End
+If Str3="W":Then:23/26→X:End
+If Str3="X":Then:24/26→X:End
+If Str3="Y":Then:25/26→X:End
+If Str3="Z":Then:26/26→X:End
+X→L₁(S)
+End
+End
+For(K,S+1,4)
+0→L₁(K)
+End
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}→L₂
+For(Q,1,16)
+0→Z
+For(N,1,4)
+Z+[I](Q,N)*L₁(N)→Z
+End
+Z→L₂(Q)
+End
+For(Q,1,16)
+L₂(Q)+L₄(Q)→L₂(Q)
+End
+For(S,1,16)
+If L₂(S)>10:Then:0.9999→L₂(S):End
+If L₂(S)<⁻10:Then:0.0001→L₂(S):End
+If abs(L₂(S))≤10:Then:1/(1+e^(⁻L₂(S)))→L₂(S):End
+End
+{0,0,0,0}→L₃
+For(Q,1,4)
+0→Z
+For(N,1,16)
+Z+[J](Q,N)*L₂(N)→Z
+End
+Z→L₃(Q)
+End
+For(Q,1,4)
+L₃(Q)+L₅(Q)→L₃(Q)
+End
+For(S,1,4)
+If L₃(S)>10:Then:0.9999→L₃(S):End
+If L₃(S)<⁻10:Then:0.0001→L₃(S):End
+If abs(L₃(S))≤10:Then:1/(1+e^(⁻L₃(S)))→L₃(S):End
+End
+max(L₃)→M
+0→T
+For(S,1,4)
+If L₃(S)=M
+Then
+S→T
+End
+End
+If T=1:Then:"DARK"→Str3:End
+If T=2:Then:"NEWT"→Str3:End
+If T=3:Then:"DEER"→Str3:End
+If T=4:Then:"DIRT"→Str3:End
+sum(L₃)→U
+If U=0
+Then
+0→J
+Else
+int(M/sum(L₃)*100)→J
+End
+If J<0 or J>100
+Then
+Output(6,1,"Invalid Confidence Level")
+Pause 
+Goto B
+End
+ClrDraw
+ClrHome
+Output(3,1,"INPUT: ")
+Output(3,8,Str1)
+Output(4,1,"RESULT: ")
+Output(4,9,Str3)
+Output(5,1,"CONFIDENCE: ")
+Output(5,12,J)
+Output(5,14,"%")
+Output(6,1,"[")
+For(X,1,min(int(J/5),15))
+Output(6,1+X,"#")
+End
+Output(6,16,"]")
+Output(8,1,"Press any key to continue")
+Pause 
+Goto H
+
+Lbl F
+ClrHome
+Output(1,1,"=== NEURAL CLASSIFIER ===")
+Output(3,1,"Version 10.0")
+Output(4,1,"- Feedforward neural net")
+Output(5,1,"- 4-16-4 arχtecture")
+Output(6,1,"- Data augmentation")
+Output(8,1,"Press any key for menu")
+Pause 
+Goto A
+Lbl G
+ClrHome
+Disp "DONE"
+Stop
+
+Lbl P
+ClrHome
+Output(1,1,"LOADING PRETRAINED")
+Output(2,1,"WEIGHTS…")
+{16,4}→dim([I])
+{4,16}→dim([J])
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}→L₄
+{0,0,0,0}→L₅
+
+⁻1.922868→[I](1,1)
+⁻2.748730→[I](1,2)
+⁻3.061588→[I](1,3)
+⁻3.549396→[I](1,4)
+⁻3.099827→[I](2,1)
+⁻3.310016→[I](2,2)
+⁻3.936389→[I](2,3)
+⁻3.667334→[I](2,4)
+0.722875→[I](3,1)
+2.060433→[I](3,2)
+4.222662→[I](3,3)
+⁻1.141361→[I](3,4)
+⁻3.002057→[I](4,1)
+⁻5.572422→[I](4,2)
+5.895368→[I](4,3)
+⁻2.634224→[I](4,4)
+2.640853→[I](5,1)
+3.773985→[I](5,2)
+⁻3.169060→[I](5,3)
+6.638291→[I](5,4)
+⁻4.088476→[I](6,1)
+⁻3.844448→[I](6,2)
+⁻3.622120→[I](6,3)
+⁻4.198397→[I](6,4)
+⁻0.469984→[I](7,1)
+⁻1.352099→[I](7,2)
+⁻4.745701→[I](7,3)
+⁻2.325308→[I](7,4)
+⁻1.790612→[I](8,1)
+⁻2.488212→[I](8,2)
+⁻3.254187→[I](8,3)
+⁻3.020888→[I](8,4)
+1.661597→[I](9,1)
+⁻0.135794→[I](9,2)
+0.329000→[I](9,3)
+⁻1.265395→[I](9,4)
+⁻3.316348→[I](10,1)
+⁻2.001305→[I](10,2)
+⁻3.742319→[I](10,3)
+⁻0.759187→[I](10,4)
+0.560647→[I](11,1)
+12.787993→[I](11,2)
+⁻1.216508→[I](11,3)
+⁻0.535973→[I](11,4)
+0.350636→[I](12,1)
+2.134389→[I](12,2)
+2.802209→[I](12,3)
+⁻0.851395→[I](12,4)
+⁻2.956822→[I](13,1)
+⁻1.794423→[I](13,2)
+3.676098→[I](13,3)
+⁻1.745945→[I](13,4)
+⁻1.772793→[I](14,1)
+0.758560→[I](14,2)
+⁻2.304869→[I](14,3)
+⁻2.613255→[I](14,4)
+⁻1.524503→[I](15,1)
+⁻2.029736→[I](15,2)
+⁻6.826527→[I](15,3)
+⁻1.721132→[I](15,4)
+2.772174→[I](16,1)
+3.533207→[I](16,2)
+5.549498→[I](16,3)
+3.412525→[I](16,4)
+
+2.483852→[J](1,1)
+⁻0.432368→[J](1,2)
+⁻1.213441→[J](1,3)
+⁻0.594979→[J](1,4)
+⁻4.365091→[J](1,5)
+2.875978→[J](1,6)
+⁻0.141946→[J](1,7)
+1.086994→[J](1,8)
+0.921869→[J](1,9)
+⁻0.728242→[J](1,10)
+⁻5.126170→[J](1,11)
+⁻1.330163→[J](1,12)
+⁻0.786802→[J](1,13)
+⁻1.048391→[J](1,14)
+⁻3.115426→[J](1,15)
+⁻2.945437→[J](1,16)
+⁻1.912954→[J](2,1)
+⁻1.529883→[J](2,2)
+3.530233→[J](2,3)
+6.943732→[J](2,4)
+5.842584→[J](2,5)
+⁻5.003985→[J](2,6)
+⁻1.949712→[J](2,7)
+⁻1.696879→[J](2,8)
+0.991840→[J](2,9)
+⁻3.648079→[J](2,10)
+⁻3.506545→[J](2,11)
+2.455886→[J](2,12)
+3.719640→[J](2,13)
+⁻1.583077→[J](2,14)
+⁻1.441372→[J](2,15)
+3.503831→[J](2,16)
+2.595418→[J](3,1)
+0.527519→[J](3,2)
+⁻3.659660→[J](3,3)
+⁻1.832821→[J](3,4)
+⁻6.495271→[J](3,5)
+1.961410→[J](3,6)
+⁻3.331206→[J](3,7)
+0.125506→[J](3,8)
+⁻1.903683→[J](3,9)
+2.162874→[J](3,10)
+4.078992→[J](3,11)
+⁻2.880841→[J](3,12)
+⁻1.810561→[J](3,13)
+⁻1.987639→[J](3,14)
+⁻4.543228→[J](3,15)
+⁻5.101750→[J](3,16)
+⁻3.363373→[J](4,1)
+⁻6.725844→[J](4,2)
+⁻1.982422→[J](4,3)
+⁻3.826858→[J](4,4)
+⁻2.821895→[J](4,5)
+7.348719→[J](4,6)
+⁻2.913586→[J](4,7)
+⁻4.779973→[J](4,8)
+⁻0.967730→[J](4,9)
+⁻2.195650→[J](4,10)
+4.709452→[J](4,11)
+⁻0.437734→[J](4,12)
+⁻0.632461→[J](4,13)
+⁻1.894206→[J](4,14)
+⁻3.863636→[J](4,15)
+⁻7.694350→[J](4,16)
+
+4.487451→L₄(1)
+4.700379→L₄(2)
+⁻3.491882→L₄(3)
+⁻2.155013→L₄(4)
+⁻6.235761→L₄(5)
+8.994449→L₄(6)
+1.273669→L₄(7)
+3.397662→L₄(8)
+0.195817→L₄(9)
+3.109136→L₄(10)
+⁻0.241288→L₄(11)
+⁻2.476383→L₄(12)
+⁻1.758906→L₄(13)
+0.535165→L₄(14)
+2.336506→L₄(15)
+⁻8.386995→L₄(16)
+
+0.320004→L₅(1)
+⁻0.211338→L₅(2)
+⁻2.635387→L₅(3)
+⁻0.189082→L₅(4)
+
+Output(3,1,"LOAD COMPLETE")
+Pause 
+Goto A
