@@ -1,4 +1,4 @@
-# Hermes Neural Messenger: TI-84 Word Classifier & PC Trainer
+# Hermes, Neural Messenger: TI-84 Word Classifier & PC Trainer
 
 ## Project Overview
 
