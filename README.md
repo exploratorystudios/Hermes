@@ -36,7 +36,7 @@ The neural network, when trained extensively with the provided Python script's d
     * The TI-BASIC code includes a module for on-calculator training (accessible via `Lbl T` if manually navigated to, but not from the main menu).
     * **This module should NOT be used.** It is extremely slow, cannot reliably train beyond 25 epochs due to potential variable overflows, and the resulting model quality is exceptionally poor compared to PC-trained models. It exists purely for legacy/posterity reasons.
 
-### Python Training Script (`rainer.py`)
+### Python Training Script (`trainer.py`)
 
 * **Effective Model Training:** Trains the 4-16-4 neural network architecture on a PC, allowing for extensive and computationally intensive training.
 * **Configurable Hyperparameters:** Allows command-line configuration of learning rate and the number of training epochs.
