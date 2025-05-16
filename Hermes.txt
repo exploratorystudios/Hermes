@@ -202,7 +202,7 @@ Menu("NEURAL CLASSIFIER","CLASSIFY",B,"LOADPRETRAIN",P,"ABOUT",F,"EXIT",G)
 Lbl B
 ClrHome
 Disp ("WORD CLASSIFIER")
-Disp ("Press ENTER")
+Disp ("Press ON")
 Disp ("to exit.")
 Lbl H
 Disp ("WORD?")
