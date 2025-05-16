@@ -26,8 +26,6 @@ The "messages" Hermes delivers – the trained intelligence of the neural networ
 * **Activation Function (The Spark of Thought):** Sigmoid activation function ($f(x) = \frac{1}{(1 + e^{-x})}$), with output clamping for stable thought processes on the calculator.
 * **Display:** Clear, text-based communication of menus, progress, and results.
 
-*(Note: The program name on the calculator might be truncated (e.g., to `HERMES` or `NNCLAS10`). The internal display name "NEURALNET CLASSIFIER V10.0" will still be shown by Hermes itself.)*
-
 ### Hermes's Training Scribe (Python Script: `python_trainer.py`)
 
 * **Crafting Messages on Olympus (PC-Based Model Training):** Train Hermes's neural network on your computer, allowing for more extensive training epochs and fine-tuned learning rates, resulting in more insightful classification "messages."
