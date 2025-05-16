@@ -3,7 +3,7 @@
 ## Project Overview
 
 This project consists of two main components:
-1.  A TI-BASIC program (`.8xp` file, which internally displays "HERMES V10.0" as per its `Str9` variable) designed for TI-84 Plus series graphing calculators to perform word classification using a pre-trained neural network.
+1.  A TI-BASIC program (`.8xp` file, which internally displays "HERMES V10.0") designed for TI-84 Plus series graphing calculators to perform word classification using a pre-trained neural network.
 2.  A Python script (`trainer.py`) for training this neural network model on a PC. Training on a PC is essential for achieving effective classification performance due to the computational limitations of the calculator.
 
 The system classifies 4-letter words into one of four predefined categories: DARK, NEWT, DEER, or DIRT. Its notable strength, when using PC-trained models, is a high degree of tolerance to misspellings and input variations.
