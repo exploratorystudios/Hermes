@@ -4,7 +4,7 @@ Output(1,1,Str9)
 Lbl Z
 ClrHome
 Output(1,1,"=== MAIN MENU ===")
-Menu("SELECT OPTION","TRAIN NEW MODEL",T,"SKIP",A,"EXIT",G)
+Menu("SELECT OPTION","CONTINUE",A,"EXIT",G)
 Lbl T
 ClrHome
 Output(1,1,Str9)
@@ -201,12 +201,15 @@ ClrHome
 Menu("NEURAL CLASSIFIER","CLASSIFY",B,"LOADPRETRAIN",P,"ABOUT",F,"EXIT",G)
 Lbl B
 ClrHome
-Disp (1,1,"WORD CLASSIFIER")
-Disp (8,1,"Press ENTER to exit.")
+Disp ("WORD CLASSIFIER")
+Disp ("Press ENTER")
+Disp ("to exit.")
 Lbl H
-Disp (3,1,"WORD? max 4 chars")
-Disp (4,1,"> ")
+Disp ("WORD?")
+Disp ("max 4 chars")
+Disp ("> ")
 Input Str1
+ClrHome
 {0,0,0,0}→L₁
 If length(Str1)=0
 Then
@@ -331,13 +334,16 @@ Goto H
 
 Lbl F
 ClrHome
-Output(1,1,"=== HERMES ===")
-Output(3,1,"Version 10.0")
-Output(4,1,"- Feedforward neural net")
-Output(5,1,"- 4-16-4 arχtecture")
-Output(6,1,"- Data augmentation")
-Output(8,1,"Press any key for menu")
+ClrDraw
+Text(0,0,"=== HERMES ===")
+Text(16,0,"Version 10.0")
+Text(24,0,"- Feedforward neural net")
+Text(32,0,"- 4-16-4 arχtecture")
+Text(40,0,"- Data augmentation")
+Text(56,0,"Press any key for menu")
 Pause 
+ClrDraw
+ClrHome
 Goto A
 Lbl G
 ClrHome
